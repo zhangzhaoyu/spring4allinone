@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="spring4allinone:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="spring4-all-in-one.war">
+      <element id="artifact" artifact-name="spring4allinone:war exploded" />
+    </root>
+  </artifact>
+</component>
