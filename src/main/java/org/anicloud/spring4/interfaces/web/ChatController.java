@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
@@ -21,18 +22,13 @@ public class ChatController extends BaseController {
     private static final Logger LOG = LoggerFactory.getLogger(ChatController.class);
     private static List<String> emails = new ArrayList<String>();
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String loginPage() {
-        LOG.info("chat socket login page!!!");
-        return "login";
-    }
-
     @RequestMapping(value = "/dologin", method = RequestMethod.POST)
-    public String doLogin(HttpServletRequest request, Model model, String email) {
-        LOG.info("login email is : {}", email);
+    public String doLogin(HttpServletRequest request, Model model, String username) {
+
+        LOG.info("login email is : {}", username);
         HttpSession session = request.getSession(false);
-        session.setAttribute("email", email);
-        emails.add(email);
+        session.setAttribute("email", username);
+        emails.add(username);
         model.addAttribute("emails", emails);
         return "chat";
     }

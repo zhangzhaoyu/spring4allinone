@@ -25,8 +25,7 @@ public class ChatMessageHandler extends TextWebSocketHandler {
 
     @Override
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
-        LOG.info("session id : {}", session.getId());
-        LOG.info("message is : {} ", message.getPayload());
+        LOG.info("session id : {}, message is : {} ", session.getId(), message.getPayload());
         super.handleTextMessage(session, message);
         String email = (String) session.getAttributes().get("email");
         LOG.info("current user email : {}", email);

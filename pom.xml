@@ -24,6 +24,9 @@
     <properties>
         <java-version>1.7</java-version>
         <org.springframework-version>4.1.6.RELEASE</org.springframework-version>
+        <org.spring.security.version>4.0.1.RELEASE</org.spring.security.version>
+        <org.spring.security.oauth2.version>4.0.1.RELEASE</org.spring.security.oauth2.version>
+        <org.spring.data.jpa>1.8.0</org.spring.data.jpa>
         <hibernate-version>4.3.5.Final</hibernate-version>
         <jackson-version>2.4.0</jackson-version>
         <slf4j-version>1.7.12</slf4j-version>
@@ -229,6 +232,32 @@
             <version>${org.springframework-version}</version>
         </dependency>
         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-oxm</artifactId>
+            <version>${org.springframework-version}</version>
+        </dependency>
+
+        <!-- spring security -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${org.spring.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${org.spring.security.version}</version>
+        </dependency>
+        <!-- transitive dependencies resolve  -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-framework-bom</artifactId>
+            <version>4.1.6.RELEASE</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
             <version>1.6.0.RELEASE</version>
@@ -239,6 +268,12 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.24</version>
+        </dependency>
+
+        <dependency>
+            <groupId>c3p0</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.1.2</version>
         </dependency>
 
         <!-- jackson -->
@@ -256,6 +291,13 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
             <version>${jackson-version}</version>
+        </dependency>
+
+        <!-- xml -->
+        <dependency>
+            <groupId>com.thoughtworks.xstream</groupId>
+            <artifactId>xstream</artifactId>
+            <version>1.4.8</version>
         </dependency>
 
         <!-- google gson -->
@@ -304,6 +346,11 @@
         </dependency>
 
     </dependencies>
+
+    <dependencyManagement>
+
+    </dependencyManagement>
+
     <build>
         <finalName>spring4-all-in-one</finalName>
     </build>

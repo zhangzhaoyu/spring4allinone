@@ -31,11 +31,29 @@
         </div>
     </div>
     <div class="row">
+        <c:if test="${param.error != null}">
+            <p>
+                Invalid username and password.
+            </p>
+        </c:if>
+        <c:if test="${param.logout != null}">
+            <p>
+                You have been logged out.
+            </p>
+        </c:if>
+    </div>
+    <div class="row">
         <div class="col-sm-offset-3 col-sm-6">
-            <form class="form-horizontal" action="${pageContext.request.contextPath}/chat/dologin" method="POST">
+            <form id="authForm" class="form-horizontal" action="${pageContext.request.contextPath}/chat/dologin" method="POST">
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <input type="email" name="email" class="form-control input-lg" id="inputEmail3" placeholder="JUST AN EMAIL">
+                        <input type="email" name="username" class="form-control" id="email" placeholder="Email">
+                    </div>
+                    <div class="col-sm-12">
+                        <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                    </div>
+                    <div>
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                     </div>
                 </div>
                 <div class="form-group">
@@ -51,7 +69,9 @@
 <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="${pageContext.request.contextPath}/public/vender/bootstrap/js/bootstrap.min.js"></script>
-<!--websocket-->
-<script src="//cdn.jsdelivr.net/sockjs/0.3.4/sockjs.min.js"></script>
+<script src="${pageContext.request.contextPath}/public/vender/jquery/jquery.md5.js"></script>
+<script src="${pageContext.request.contextPath}/public/vender/jquery/md5.js"></script>
+<script src="${pageContext.request.contextPath}/public/scripts/anicelSecurity.js"></script>
+
 </body>
 </html>

@@ -128,8 +128,8 @@
 
         $("#content").append(result.msg + "\r\n");
     }
-    function onError() {
-        console.log("session on error!!!");
+    function onError(msg) {
+        console.log("session on error!!!" + msg);
     }
     function onClose() {
         console.log("session closed!!!");

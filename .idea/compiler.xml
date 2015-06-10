@@ -25,6 +25,8 @@
         <module name="spring4allinone" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="1.7">
+      <module name="spring4allinone" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
-
