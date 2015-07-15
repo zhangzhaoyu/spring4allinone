@@ -62,7 +62,7 @@
         <!--待扫描的实体类包，不再需要persistence.xml了-->
         <property name="packagesToScan" >
             <list>
-                <value>org.anicloud.spring4.infrastructure.persistence.model.oauth2</value>
+                <value>org.anicloud.spring4.infrastructure.persistence.model</value>
             </list>
         </property>
         <property name="jpaProperties">

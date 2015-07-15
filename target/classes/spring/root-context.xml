@@ -17,11 +17,18 @@
 
 	<!-- Root Context: defines shared resources visible to all other web components-->
 	<!--<context:component-scan base-package="com.ani.cel.rect.manager.application.service.core" />-->
-	<!-- 当Spring容器启动完成后执行下面的这个Bean 
+	<!-- 当Spring容器启动完成后执行下面的这个Bean
     <bean class="cn.bjfu.fesdmp.frame.listener.InstantiationTracingBeanPostProcessor"/>-->
+	<context:component-scan base-package="org.anicloud.spring4.infrastructure.jms" />
+	<import resource="classpath*:spring/jmsConsumer.xml"/>
+	<import resource="classpath*:spring/jms.xml"/>
 
      <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
      	<property name="useCodeAsDefaultMessage" value="true" />
-    	<property name="basenames" value="classpath:messages/messages"/>
+    	<property name="basenames">
+			<list>
+				<value>messages/messages</value>
+			</list>
+		</property>
     </bean>
 </beans>

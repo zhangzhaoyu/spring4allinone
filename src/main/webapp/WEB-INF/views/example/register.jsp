@@ -3,7 +3,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<fmt:setLocale value="zh_CN" />
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -11,7 +10,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>Register</title>
+    <title>
+        <fmt:bundle basename="messages/messages">
+            <fmt:message key="Sys.register.title" />
+        </fmt:bundle>
+    </title>
 
     <!-- Bootstrap -->
     <link href="${pageContext.request.contextPath}/public/vender/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -28,7 +31,7 @@
 <div class="container">
     <div class="row" style="margin-top: 30px; margin-bottom: 40px;">
         <div class="col-sm-offset-3 col-sm-6">
-            <h1>ANICLOUD CHATING ROOM</h1>
+            <h1>ANICLOUD Register</h1>
         </div>
     </div>
     <div class="row">

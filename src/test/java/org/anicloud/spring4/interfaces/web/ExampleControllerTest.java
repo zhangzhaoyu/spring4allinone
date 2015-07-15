@@ -2,6 +2,7 @@ package org.anicloud.spring4.interfaces.web;
 
 import com.thoughtworks.xstream.io.xml.StaxDriver;
 import org.anicloud.spring4.application.dto.UserDto;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.http.*;
 import org.springframework.http.converter.StringHttpMessageConverter;
@@ -19,7 +20,7 @@ public class ExampleControllerTest {
 
     private final static String url = "http://localhost:8080/spring4/example/handler22";
 
-    @Test
+    @Ignore
     public void testHandler22() {
         RestTemplate restTemplate = buildRestTemplate();
         UserDto userDto = new UserDto();
